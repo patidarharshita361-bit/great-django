@@ -142,3 +142,4 @@ $(document).on('click', '.gk-product-wishlist-btn[data-toggle-url]', function (e
 
 // ================= END WISHLIST AJAX =================
 
+
