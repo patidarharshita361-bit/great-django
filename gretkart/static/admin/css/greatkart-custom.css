@@ -1,0 +1,1296 @@
+/* =====================================
+   GREATKART - CUSTOM RESPONSIVE NAVBAR
+===================================== */
+
+.gk-header {
+    background: #ffffff;
+    width: 100%;
+    position: relative;
+    z-index: 1000;
+}
+
+/* Top Header */
+
+.top-header {
+    background: #f5f5f5;
+    padding: 9px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.top-link {
+    color: #555555;
+    font-size: 13px;
+    margin-right: 18px;
+    text-decoration: none;
+}
+
+.top-link:hover {
+    color: #3167eb;
+    text-decoration: none;
+}
+
+/* Main Header */
+
+.header-main {
+    background: #ffffff;
+    padding: 17px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.gk-header-row {
+    min-height: 55px;
+}
+
+/* Logo */
+
+.gk-logo {
+    display: inline-flex;
+    align-items: center;
+}
+
+.gk-logo .logo {
+    max-width: 150px;
+    max-height: 55px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Category Button */
+
+.category-btn {
+    background: #3167eb;
+    border-color: #3167eb;
+    border-radius: 6px;
+    padding: 11px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.category-btn:hover,
+.category-btn:focus {
+    background: #2454c5;
+    border-color: #2454c5;
+}
+
+/* Category Dropdown */
+
+.category-wrap .dropdown-menu {
+    min-width: 190px;
+    border: 1px solid #eeeeee;
+    border-radius: 7px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.10);
+    padding: 7px 0;
+}
+
+.category-wrap .dropdown-item {
+    padding: 9px 15px;
+    font-size: 14px;
+}
+
+.category-wrap .dropdown-item:hover {
+    background: #f2f5ff;
+    color: #3167eb;
+}
+
+/* Store Button */
+
+.store-btn {
+    display: inline-block;
+    background: #f2f5ff;
+    color: #3167eb;
+    padding: 10px 17px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+}
+
+.store-btn:hover {
+    background: #3167eb;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Search Bar */
+
+.search-input {
+    height: 43px;
+    border: 1px solid #dddddd;
+    border-radius: 6px 0 0 6px;
+    font-size: 14px;
+    box-shadow: none;
+}
+
+.search-input:focus {
+    border-color: #3167eb;
+    box-shadow: none;
+}
+
+.search-btn {
+    height: 43px;
+    min-width: 48px;
+    background: #3167eb;
+    border-color: #3167eb;
+    border-radius: 0 6px 6px 0;
+}
+
+.search-btn:hover {
+    background: #2454c5;
+    border-color: #2454c5;
+}
+
+/* Account Section */
+
+.account-section {
+    text-align: right;
+    margin-right: 18px;
+    line-height: 1.6;
+}
+
+.account-section small {
+    font-size: 12px;
+}
+
+.account-section a {
+    color: #333333;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.account-section a:hover {
+    color: #3167eb;
+}
+
+.account-section span {
+    color: #cccccc;
+    margin: 0 4px;
+}
+
+/* Cart */
+
+.desktop-cart,
+.cart-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #333333;
+    font-size: 22px;
+    text-decoration: none;
+    padding: 8px;
+}
+
+.desktop-cart:hover,
+.cart-link:hover {
+    color: #3167eb;
+    text-decoration: none;
+}
+
+.desktop-cart .badge,
+.cart-link .badge {
+    font-size: 10px;
+    position: absolute;
+    top: 0;
+    right: -2px;
+    border-radius: 50%;
+}
+
+/* Mobile Account */
+
+.mobile-account {
+    color: #333333;
+    font-size: 21px;
+    padding: 8px;
+    margin-right: 10px;
+}
+
+.mobile-account:hover {
+    color: #3167eb;
+    text-decoration: none;
+}
+
+/* Tablet */
+
+@media (max-width: 991px) {
+
+    .header-main {
+        padding: 14px 0;
+    }
+
+    .gk-logo .logo {
+        max-width: 135px;
+    }
+
+    .category-btn {
+        padding: 10px 11px;
+        font-size: 13px;
+    }
+
+    .account-section {
+        margin-right: 10px;
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+
+    .header-main {
+        padding: 12px 0;
+    }
+
+    .gk-header-row {
+        min-height: auto;
+    }
+
+    .gk-logo .logo {
+        max-width: 125px;
+        max-height: 45px;
+    }
+
+    .mobile-account,
+    .cart-link {
+        font-size: 20px;
+    }
+
+    .category-wrap,
+    .store-btn,
+    .search {
+        width: 100%;
+    }
+
+    .category-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .store-btn {
+        display: block;
+        padding: 10px;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+}
+
+/* Small Mobile */
+
+@media (max-width: 400px) {
+
+    .gk-logo .logo {
+        max-width: 110px;
+    }
+
+    .mobile-account,
+    .cart-link {
+        padding: 6px;
+        font-size: 18px;
+    }
+
+    .category-btn {
+        font-size: 12px;
+        padding: 9px 5px;
+    }
+
+}
+/* =========================================
+   GREATKART - MODERN HOMEPAGE DESIGN
+========================================= */
+
+/* HERO BANNER */
+
+.gk-hero-section {
+    padding: 25px 0;
+    background: #f8f9fc;
+}
+
+.gk-hero-banner {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    min-height: 360px;
+    background: #eaf1ff;
+}
+
+.gk-hero-image {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+
+.gk-hero-content {
+    position: absolute;
+    top: 50%;
+    left: 6%;
+    transform: translateY(-50%);
+    max-width: 390px;
+    padding: 20px;
+    background: rgba(255,255,255,0.88);
+    border-radius: 12px;
+}
+
+.gk-hero-label {
+    color: #3167eb;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.gk-hero-content h1 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #222;
+    margin: 12px 0;
+}
+
+.gk-hero-content p {
+    color: #666;
+    font-size: 15px;
+}
+
+.gk-shop-btn {
+    display: inline-block;
+    background: #3167eb;
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.gk-shop-btn:hover {
+    background: #204fc4;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* SHOPPING BENEFITS */
+
+.gk-benefits {
+    padding: 20px 0;
+    background: #fff;
+}
+
+.gk-benefit-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 12px;
+    border: 1px solid #eeeeee;
+    border-radius: 9px;
+    margin-bottom: 12px;
+    height: calc(100% - 12px);
+    transition: 0.3s;
+}
+
+.gk-benefit-card:hover {
+    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+    transform: translateY(-3px);
+}
+
+.gk-benefit-card i {
+    color: #3167eb;
+    font-size: 25px;
+}
+
+.gk-benefit-card h6 {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 4px;
+}
+
+.gk-benefit-card p {
+    color: #888;
+    font-size: 11px;
+    margin: 0;
+}
+
+
+/* PRODUCT SECTION */
+
+.gk-products-section {
+    padding: 45px 0;
+    background: #f8f9fc;
+}
+
+.gk-section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.gk-section-subtitle {
+    color: #3167eb;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.gk-section-heading h2 {
+    font-size: 27px;
+    font-weight: 800;
+    color: #222;
+    margin: 5px 0;
+}
+
+.gk-section-heading p {
+    color: #777;
+    font-size: 14px;
+    margin: 0;
+}
+
+.gk-see-all {
+    color: #3167eb;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.gk-see-all:hover {
+    color: #204fc4;
+    text-decoration: none;
+}
+
+
+/* PRODUCT CARDS */
+
+.gk-product-card {
+    background: #fff;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    height: calc(100% - 25px);
+    transition: 0.3s ease;
+}
+
+.gk-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.09);
+}
+
+.gk-product-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 230px;
+    padding: 15px;
+    background: #fff;
+}
+
+.gk-product-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: 0.3s;
+}
+
+.gk-product-card:hover .gk-product-image img {
+    transform: scale(1.04);
+}
+
+.gk-product-info {
+    padding: 15px;
+    border-top: 1px solid #f1f1f1;
+}
+
+.gk-product-title {
+    display: block;
+    color: #333;
+    font-size: 15px;
+    font-weight: 600;
+    min-height: 40px;
+    text-decoration: none;
+}
+
+.gk-product-title:hover {
+    color: #3167eb;
+    text-decoration: none;
+}
+
+.gk-product-price {
+    color: #3167eb;
+    font-size: 18px;
+    font-weight: 800;
+    margin: 8px 0;
+}
+
+.gk-view-product {
+    display: block;
+    text-align: center;
+    background: #f1f4ff;
+    color: #3167eb;
+    padding: 9px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.gk-view-product:hover {
+    background: #3167eb;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* EMPTY PRODUCTS */
+
+.gk-empty-products {
+    background: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.gk-empty-products i {
+    font-size: 45px;
+    color: #3167eb;
+    margin-bottom: 15px;
+}
+
+.gk-empty-products h4 {
+    font-weight: 700;
+}
+
+
+/* TABLET */
+
+@media (max-width: 991px) {
+
+    .gk-hero-image {
+        height: 350px;
+    }
+
+    .gk-hero-content h1 {
+        font-size: 29px;
+    }
+
+    .gk-product-image {
+        height: 210px;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+
+    .gk-hero-section {
+        padding: 12px 0;
+    }
+
+    .gk-hero-banner {
+        min-height: 220px;
+    }
+
+    .gk-hero-image {
+        height: 230px;
+    }
+
+    .gk-hero-content {
+        left: 12px;
+        max-width: 210px;
+        padding: 12px;
+    }
+
+    .gk-hero-label {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .gk-hero-content h1 {
+        font-size: 20px;
+        margin: 6px 0;
+    }
+
+    .gk-hero-content p {
+        font-size: 11px;
+        margin-bottom: 5px;
+    }
+
+    .gk-shop-btn {
+        font-size: 11px;
+        padding: 8px 12px;
+        margin-top: 5px;
+    }
+
+    .gk-benefits {
+        padding: 12px 0;
+    }
+
+    .gk-benefit-card {
+        padding: 12px 7px;
+        gap: 7px;
+    }
+
+    .gk-benefit-card i {
+        font-size: 19px;
+    }
+
+    .gk-benefit-card h6 {
+        font-size: 11px;
+    }
+
+    .gk-benefit-card p {
+        font-size: 9px;
+    }
+
+    .gk-products-section {
+        padding: 25px 0;
+    }
+
+    .gk-section-heading h2 {
+        font-size: 21px;
+    }
+
+    .gk-section-heading p {
+        font-size: 11px;
+    }
+
+    .gk-see-all {
+        font-size: 12px;
+    }
+
+    .gk-product-image {
+        height: 165px;
+        padding: 10px;
+    }
+
+    .gk-product-info {
+        padding: 10px;
+    }
+
+    .gk-product-title {
+        font-size: 12px;
+        min-height: 35px;
+    }
+
+    .gk-product-price {
+        font-size: 15px;
+    }
+
+    .gk-view-product {
+        font-size: 11px;
+        padding: 7px;
+    }
+
+}
+
+
+/* =========================================
+   GREATKART - MODERN HOMEPAGE DESIGN
+========================================= */
+
+/* HERO BANNER */
+
+.gk-hero-section {
+    padding: 25px 0;
+    background: #f8f9fc;
+}
+
+.gk-hero-banner {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    min-height: 360px;
+    background: #eaf1ff;
+}
+
+.gk-hero-image {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+
+.gk-hero-content {
+    position: absolute;
+    top: 50%;
+    left: 6%;
+    transform: translateY(-50%);
+    max-width: 390px;
+    padding: 20px;
+    background: rgba(255,255,255,0.88);
+    border-radius: 12px;
+}
+
+.gk-hero-label {
+    color: #3167eb;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.gk-hero-content h1 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #222;
+    margin: 12px 0;
+}
+
+.gk-hero-content p {
+    color: #666;
+    font-size: 15px;
+}
+
+.gk-shop-btn {
+    display: inline-block;
+    background: #3167eb;
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.gk-shop-btn:hover {
+    background: #204fc4;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* SHOPPING BENEFITS */
+
+.gk-benefits {
+    padding: 20px 0;
+    background: #fff;
+}
+
+.gk-benefit-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 12px;
+    border: 1px solid #eeeeee;
+    border-radius: 9px;
+    margin-bottom: 12px;
+    height: calc(100% - 12px);
+    transition: 0.3s;
+}
+
+.gk-benefit-card:hover {
+    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+    transform: translateY(-3px);
+}
+
+.gk-benefit-card i {
+    color: #3167eb;
+    font-size: 25px;
+}
+
+.gk-benefit-card h6 {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 4px;
+}
+
+.gk-benefit-card p {
+    color: #888;
+    font-size: 11px;
+    margin: 0;
+}
+
+
+/* PRODUCT SECTION */
+
+.gk-products-section {
+    padding: 45px 0;
+    background: #f8f9fc;
+}
+
+.gk-section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.gk-section-subtitle {
+    color: #3167eb;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.gk-section-heading h2 {
+    font-size: 27px;
+    font-weight: 800;
+    color: #222;
+    margin: 5px 0;
+}
+
+.gk-section-heading p {
+    color: #777;
+    font-size: 14px;
+    margin: 0;
+}
+
+.gk-see-all {
+    color: #3167eb;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.gk-see-all:hover {
+    color: #204fc4;
+    text-decoration: none;
+}
+
+
+/* PRODUCT CARDS */
+
+.gk-product-card {
+    background: #fff;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    height: calc(100% - 25px);
+    transition: 0.3s ease;
+}
+
+.gk-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.09);
+}
+
+.gk-product-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 230px;
+    padding: 15px;
+    background: #fff;
+}
+
+.gk-product-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: 0.3s;
+}
+
+.gk-product-card:hover .gk-product-image img {
+    transform: scale(1.04);
+}
+
+.gk-product-info {
+    padding: 15px;
+    border-top: 1px solid #f1f1f1;
+}
+
+.gk-product-title {
+    display: block;
+    color: #333;
+    font-size: 15px;
+    font-weight: 600;
+    min-height: 40px;
+    text-decoration: none;
+}
+
+.gk-product-title:hover {
+    color: #3167eb;
+    text-decoration: none;
+}
+
+.gk-product-price {
+    color: #3167eb;
+    font-size: 18px;
+    font-weight: 800;
+    margin: 8px 0;
+}
+
+.gk-view-product {
+    display: block;
+    text-align: center;
+    background: #f1f4ff;
+    color: #3167eb;
+    padding: 9px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.gk-view-product:hover {
+    background: #3167eb;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* EMPTY PRODUCTS */
+
+.gk-empty-products {
+    background: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.gk-empty-products i {
+    font-size: 45px;
+    color: #3167eb;
+    margin-bottom: 15px;
+}
+
+.gk-empty-products h4 {
+    font-weight: 700;
+}
+
+
+/* TABLET */
+
+@media (max-width: 991px) {
+
+    .gk-hero-image {
+        height: 350px;
+    }
+
+    .gk-hero-content h1 {
+        font-size: 29px;
+    }
+
+    .gk-product-image {
+        height: 210px;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+
+    .gk-hero-section {
+        padding: 12px 0;
+    }
+
+    .gk-hero-banner {
+        min-height: 220px;
+    }
+
+    .gk-hero-image {
+        height: 230px;
+    }
+
+    .gk-hero-content {
+        left: 12px;
+        max-width: 210px;
+        padding: 12px;
+    }
+
+    .gk-hero-label {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .gk-hero-content h1 {
+        font-size: 20px;
+        margin: 6px 0;
+    }
+
+    .gk-hero-content p {
+        font-size: 11px;
+        margin-bottom: 5px;
+    }
+
+    .gk-shop-btn {
+        font-size: 11px;
+        padding: 8px 12px;
+        margin-top: 5px;
+    }
+
+    .gk-benefits {
+        padding: 12px 0;
+    }
+
+    .gk-benefit-card {
+        padding: 12px 7px;
+        gap: 7px;
+    }
+
+    .gk-benefit-card i {
+        font-size: 19px;
+    }
+
+    .gk-benefit-card h6 {
+        font-size: 11px;
+    }
+
+    .gk-benefit-card p {
+        font-size: 9px;
+    }
+
+    .gk-products-section {
+        padding: 25px 0;
+    }
+
+    .gk-section-heading h2 {
+        font-size: 21px;
+    }
+
+    .gk-section-heading p {
+        font-size: 11px;
+    }
+
+    .gk-see-all {
+        font-size: 12px;
+    }
+
+    .gk-product-image {
+        height: 165px;
+        padding: 10px;
+    }
+
+    .gk-product-info {
+        padding: 10px;
+    }
+
+    .gk-product-title {
+        font-size: 12px;
+        min-height: 35px;
+    }
+
+    .gk-product-price {
+        font-size: 15px;
+    }
+
+    .gk-view-product {
+        font-size: 11px;
+        padding: 7px;
+    }
+
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+
+    .gk-hero-content {
+        max-width: 185px;
+    }
+
+    .gk-hero-content h1 {
+        font-size: 17px;
+    }
+
+    .gk-product-image {
+        height: 145px;
+    }
+
+}
+/* =====================================
+   GREATKART HERO BANNER FINAL FIX
+===================================== */
+
+.gk-hero-banner {
+    position: relative !important;
+    width: 100%;
+    height: 420px;
+    min-height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.gk-hero-image {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 12px;
+}
+
+.gk-hero-content {
+    position: absolute !important;
+    z-index: 2;
+    top: 50% !important;
+    left: 6% !important;
+    transform: translateY(-50%) !important;
+    width: 390px;
+    max-width: 85%;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.90);
+    border-radius: 12px;
+}
+
+/* TABLET */
+
+@media (max-width: 991px) {
+    .gk-hero-banner {
+        height: 340px;
+    }
+
+    .gk-hero-content {
+        left: 4% !important;
+        width: 330px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+    .gk-hero-section {
+        padding: 12px 0;
+    }
+
+    .gk-hero-banner {
+        height: 230px;
+        border-radius: 9px;
+    }
+
+    .gk-hero-image {
+        object-position: center;
+    }
+
+    .gk-hero-content {
+        left: 12px !important;
+        top: 50% !important;
+        width: 205px;
+        max-width: 75%;
+        padding: 12px;
+        border-radius: 8px;
+    }
+
+    .gk-hero-content h1 {
+        font-size: 19px;
+        margin: 6px 0;
+    }
+
+    .gk-hero-content p {
+        font-size: 11px;
+        margin-bottom: 5px;
+    }
+
+    .gk-hero-shop-btn {
+        font-size: 11px;
+    }
+
+    .gk-shop-btn {
+        padding: 8px 12px;
+        font-size: 11px;
+    }
+}
+/* Homepage Add to Cart Button */
+
+.gk-add-cart-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 11px;
+    background: #3167eb;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.gk-add-cart-btn:hover {
+    background: #1748c7;
+}
+
+/* Mobile Button */
+
+@media (max-width: 767px) {
+    .gk-add-cart-btn {
+        padding: 10px 5px;
+        font-size: 13px;
+    }
+}
+/* =================================
+   HOMEPAGE AJAX QUANTITY CONTROLS
+================================= */
+
+.gk-home-cart-control {
+    width: 100%;
+    margin-top: 12px;
+}
+
+.gk-add-cart-btn {
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    padding: 11px 12px;
+    background: #3167eb;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.gk-add-cart-btn:hover {
+    background: #2454c6;
+    color: #fff;
+}
+
+.gk-add-cart-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.gk-quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 42px;
+    border: 1px solid #3167eb;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+.gk-quantity-control[hidden],
+.gk-home-add-form[hidden] {
+    display: none !important;
+}
+
+.gk-quantity-control button {
+    width: 38px;
+    height: 40px;
+    border: none;
+    background: #3167eb;
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.gk-quantity-control button:hover {
+    background: #2454c6;
+}
+
+.gk-quantity-control button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.gk-qty-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+}

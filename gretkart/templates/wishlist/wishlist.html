@@ -1,0 +1,319 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+.gk-wishlist-section {
+    padding: 45px 0;
+    min-height: 500px;
+}
+
+.gk-wishlist-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+.gk-wishlist-subtitle {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.gk-wishlist-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%;
+    transition: .3s;
+}
+
+.gk-wishlist-card:hover {
+    box-shadow: 0 6px 22px rgba(0,0,0,.10);
+    transform: translateY(-4px);
+}
+
+.gk-wishlist-image {
+    height: 230px;
+    background: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.gk-wishlist-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.gk-wishlist-info {
+    padding: 18px;
+}
+
+.gk-wishlist-name {
+    font-size: 17px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.gk-wishlist-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.gk-stock-status {
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.gk-stock-in {
+    color: #198754;
+}
+
+.gk-stock-out {
+    color: #dc3545;
+}
+
+.gk-wishlist-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.gk-wishlist-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none !important;
+    border: none;
+    cursor: pointer;
+}
+
+.gk-move-cart {
+    background: #007bff;
+    color: #fff !important;
+}
+
+.gk-move-cart:hover {
+    background: #0056b3;
+}
+
+.gk-view-details {
+    background: #f1f1f1;
+    color: #333 !important;
+}
+
+.gk-remove-wishlist {
+    background: #fff0f0;
+    color: #dc3545;
+}
+
+.gk-empty-wishlist {
+    text-align: center;
+    padding: 65px 15px;
+}
+
+.gk-empty-wishlist i {
+    font-size: 75px;
+    color: #ff6b81;
+    margin-bottom: 20px;
+}
+
+.gk-empty-wishlist h3 {
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.gk-start-shopping {
+    display: inline-block;
+    background: #007bff;
+    color: white !important;
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none !important;
+    margin-top: 15px;
+}
+
+@media(max-width: 576px) {
+    .gk-wishlist-title {
+        font-size: 23px;
+    }
+
+    .gk-wishlist-image {
+        height: 200px;
+    }
+
+    .gk-wishlist-section {
+        padding: 30px 0;
+    }
+}
+</style>
+
+
+<section class="gk-wishlist-section">
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center flex-wrap mb-4">
+
+            <div>
+                <h2 class="gk-wishlist-title">My Wishlist</h2>
+
+                <p class="gk-wishlist-subtitle">
+                    Your favourite products in one place.
+                </p>
+            </div>
+
+            <span class="badge badge-primary p-2">
+                {{ wishlist_count }} Saved Products
+            </span>
+
+        </div>
+
+
+        {% if wishlist_items %}
+
+        <div class="row">
+
+            {% for item in wishlist_items %}
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+
+                <div class="gk-wishlist-card">
+
+                    <div class="gk-wishlist-image">
+
+                        <a href="{{ item.product.get_url }}">
+                            <img src="{{ item.product.image.url }}"
+                                 alt="{{ item.product.product_name }}">
+                        </a>
+
+                    </div>
+
+
+                    <div class="gk-wishlist-info">
+
+                        <h5 class="gk-wishlist-name">
+                            {{ item.product.product_name }}
+                        </h5>
+
+                        <div class="gk-wishlist-price">
+                            ₹{{ item.product.price }}
+                        </div>
+
+
+                        {% if item.product.stock > 0 %}
+
+                            <div class="gk-stock-status gk-stock-in">
+                                <i class="fa fa-check-circle"></i>
+                                In Stock
+                            </div>
+
+                        {% else %}
+
+                            <div class="gk-stock-status gk-stock-out">
+                                <i class="fa fa-times-circle"></i>
+                                Out of Stock
+                            </div>
+
+                        {% endif %}
+
+
+                        <div class="gk-wishlist-actions">
+
+                            {% if item.product.stock > 0 %}
+
+                                <form action="{% url 'add_cart' item.product.id %}"
+                                      method="POST">
+
+                                    {% csrf_token %}
+
+                                    <button type="submit"
+                                            class="gk-wishlist-btn gk-move-cart">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        Move to Cart
+                                    </button>
+
+                                </form>
+
+                            {% else %}
+
+                                <button type="button"
+                                        class="gk-wishlist-btn gk-move-cart"
+                                        disabled>
+                                    Out of Stock
+                                </button>
+
+                            {% endif %}
+
+
+                            <a href="{{ item.product.get_url }}"
+                               class="gk-wishlist-btn gk-view-details">
+                                View Details
+                            </a>
+
+
+                            <form action="{% url 'remove_from_wishlist' item.product.id %}"
+                                  method="POST">
+
+                                {% csrf_token %}
+
+                                <button type="submit"
+                                        class="gk-wishlist-btn gk-remove-wishlist">
+
+                                    <i class="fa fa-trash"></i>
+                                    Remove from Wishlist
+
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+
+        {% else %}
+
+        <div class="gk-empty-wishlist">
+
+            <i class="fa fa-heart-o"></i>
+
+            <h3>Your Wishlist is Empty!</h3>
+
+            <p class="text-muted">
+                You haven't saved any products yet.
+                Explore our store and add your favourite products.
+            </p>
+
+            <a href="{% url 'home' %}" class="gk-start-shopping">
+                <i class="fa fa-shopping-bag"></i>
+                Start Shopping
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+</section>
+
+{% endblock %}

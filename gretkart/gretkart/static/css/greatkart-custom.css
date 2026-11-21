@@ -1,0 +1,37 @@
+
+/* ================= WISHLIST HEART ICON FIX ================= */
+
+/* Navbar Wishlist Heart */
+.gk-wishlist-nav {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    color: #ff4d6d !important;
+    font-size: 23px;
+}
+
+/* Product Wishlist Heart */
+.gk-product-wishlist-btn {
+    width: auto !important;
+    height: auto !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    color: #777 !important;
+    font-size: 25px !important;
+}
+
+.gk-product-wishlist-btn.active {
+    color: #ff4d6d !important;
+}
+
+.gk-product-wishlist-btn:hover {
+    color: #ff4d6d !important;
+    transform: scale(1.15);
+}
+
+/* END WISHLIST HEART ICON FIX */
+
