@@ -8,11 +8,14 @@ from store.models import product, Variation
 
 class Order(models.Model):
     STATUS = (
-        ('New', 'New'),
-        ('Accepted', 'Accepted'),
-        ('Completed', 'Completed'),
-        ('Cancelled', 'Cancelled'),
-    )
+    ('New', 'Order Placed'),
+    ('Accepted', 'Order Confirmed'),
+    ('Processing', 'Processing'),
+    ('Shipped', 'Shipped'),
+    ('Out for Delivery', 'Out for Delivery'),
+    ('Completed', 'Delivered'),
+    ('Cancelled', 'Cancelled'),
+)
 
     user = models.ForeignKey(Account, on_delete=models.SET_NULL, null=True)
     order_number = models.CharField(max_length=30, blank=True)

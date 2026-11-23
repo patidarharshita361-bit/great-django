@@ -9,7 +9,22 @@ from carts.models import Cart, CartItem
 from carts.views import _cart_id
 from .models import Order, OrderProduct
 
+def get_tracking_steps(order):
+    statuses = Order.STATUS
 
+    if order.status == 'Cancelled':
+        return []
+
+    current_index = [status[0] for status in statuses].index(order.status)
+
+    return [
+        {
+            'name': label,
+            'completed': index < current_index,
+            'current': index == current_index,
+        }
+        for index, (value, label) in enumerate(statuses)
+    ]
 @login_required(login_url='login')
 def place_order(request):
     if request.method != 'POST':
@@ -109,6 +124,7 @@ def order_complete(request):
         'ordered_products': ordered_products,
         'subtotal': subtotal,
         'show_thanks': True,
+        'tracking_steps': get_tracking_steps(order),
     }
     return render(request, 'orders/order_complete.html', context)
 @login_required(login_url='login')
@@ -125,5 +141,43 @@ def order_detail(request, order_number):
         'ordered_products': ordered_products,
         'subtotal': subtotal,
         'show_thanks': False,
+        'tracking_steps': get_tracking_steps(order),
     }
     return render(request, 'orders/order_complete.html', context)
+@login_required(login_url='login')
+def cancel_order(request, order_number):
+
+    if request.method != 'POST':
+        return redirect('my_orders')
+
+    with transaction.atomic():
+
+        order = get_object_or_404(
+            Order.objects.select_for_update(),
+            order_number=order_number,
+            user=request.user,
+            is_ordered=True
+        )
+
+        allowed_statuses = ['New', 'Accepted', 'Processing']
+
+        if order.status not in allowed_statuses:
+            messages.error(
+                request,
+                'Sorry! This order cannot be cancelled at its current stage.'
+            )
+
+        else:
+            ordered_products = OrderProduct.objects.select_for_update().filter(order=order)
+
+            for item in ordered_products:
+                product = item.product
+                product.stock += item.quantity
+                product.save(update_fields=['stock'])
+
+            order.status = 'Cancelled'
+            order.save(update_fields=['status', 'updated_at'])
+
+            messages.success(request, 'Your order has been cancelled successfully.')
+
+    return redirect('order_detail', order_number=order_number)
